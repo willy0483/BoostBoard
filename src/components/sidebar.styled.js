@@ -1,30 +1,63 @@
 import styled from "styled-components";
 
-export const SidebarStyled = styled.aside`
-grid-area: sidebar;
-background-color: ${(props) => props.theme.color.surface};
-padding: 0 2rem;
-display: flex;
-flex-direction: column;
-align-items: center;
-`
+export const SidebarStyled = styled.div`
+  width: ${({ $collapsed }) => ($collapsed ? "60px" : "250px")};
+  height: 100vh;
+  background: ${(props) => props.theme.color.primary};
+  color: white;
+  display: flex;
+  flex-direction: column;
+  padding: 20px 10px;
+  transition: width 0.3s ease;
+`;
+
+export const Logo = styled.div` 
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 40px;
+  display: flex;
+  justify-content: center;
+`;
+
+export const MenuItem = styled.div`
+  cursor: pointer;
+  transition: all 0.2s;
+  a{
+    display: flex;
+    align-items: center;
+    padding: 12px;
+  margin-bottom: 10px;
+  border-radius: 10px;
+  text-decoration: none;
+  background-color: transparent;
+  color: ${(props) => props.theme.color.white};
+  
+  &:hover {
+    background-color: ${(props) => props.theme.color.secondary};
+  }
+  &.active{
+    background-color: ${(props) => props.theme.color.secondary};
+    color: ${(props) => props.theme.color.accent};
+  }
+  }
 
 
+`;
 
-export const SidebarHeader = styled.header`
-display: flex;
-justify-content: center;
-align-items: center;
-margin: 1rem 0;
-div{
-    width: 50px;
-}
-img{
-    width: 100%;
-    height: 100%;
-    display: block;
-}
-h4{
-    color: ${(props) => props.theme.color.white};
-}
-`
+export const IconWrapper = styled.div`
+  font-size: 18px;
+  margin-right: ${({ $collapsed }) => ($collapsed ? "0" : "15px")};
+`;
+
+export const Label = styled.span`
+  display: ${({ $collapsed }) => ($collapsed ? "none" : "inline")};
+`;
+
+export const CollapseButton = styled.button`
+  margin-top: auto;
+  padding: 10px;
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+`;
