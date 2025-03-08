@@ -17,7 +17,7 @@ BoostBoard is your all-in-one **Productivity Dashboard** designed to help you st
 ## 🛠️ Tech Stack
 
 - **Frontend:** React + Vite
-- **Styling:** Tailwind CSS
+- **Styling:** Styled components
 - **State Management:** React Hooks / Context
 - **APIs:**
   - OpenWeather API (for weather)
