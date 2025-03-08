@@ -1,12 +1,43 @@
-# React + Vite
+# 🚀 BoostBoard
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+BoostBoard is your all-in-one **Productivity Dashboard** designed to help you stay focused, organized, and in the zone. With a mix of helpful tools and good vibes, BoostBoard is the ultimate daily companion.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## ✨ Features
 
-## Expanding the ESLint configuration
+- 🌤️ **Weather Widget** – Stay updated on the current weather.
+- ✅ **To-Do List** – Manage your daily tasks and goals.
+- ⏱️ **Pomodoro Timer** – Stay productive with the classic focus timer.
+- 💬 **Motivational Quotes** – Get inspired with random quotes.
+- 🎶 **Spotify Integration** – Control your music while you work.
 
-If you are developing a production application, we recommend using TypeScript and enable type-aware lint rules. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+---
+
+## 🛠️ Tech Stack
+
+- **Frontend:** React + Vite
+- **Styling:** Tailwind CSS
+- **State Management:** React Hooks / Context
+- **APIs:**
+  - OpenWeather API (for weather)
+  - Quotes API (for motivation)
+  - Spotify Web API (for music control)
+
+---
+
+## 🚧 Installation
+
+```bash
+# Clone the repository
+git clone https://github.com/your-username/boostboard.git
+
+# Move into the project folder
+cd boostboard
+
+# Install dependencies
+npm install
+
+# Run the app
+npm run dev
+```
