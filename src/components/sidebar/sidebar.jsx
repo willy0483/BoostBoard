@@ -10,6 +10,7 @@ import {
   FaChevronLeft,
   FaChevronRight,
   FaCloud,
+  FaHome,
 } from "react-icons/fa";
 
 import {
@@ -21,12 +22,21 @@ import {
   CollapseButton,
 } from "./sidebar.styled";
 
-export const Sidebar = () => {
+export const Sidebar = ({ getLocation }) => {
   const [collapsed, setCollapsed] = useState(false);
 
   return (
     <SidebarStyled $collapsed={collapsed}>
       <Logo>{!collapsed && "BoostBoard"}</Logo>
+
+      <MenuItem>
+        <NavLink to="/">
+          <IconWrapper $collapsed={collapsed}>
+            <FaHome />
+          </IconWrapper>
+          <Label $collapsed={collapsed}>Home</Label>
+        </NavLink>
+      </MenuItem>
 
       <MenuItem>
         <NavLink to="/dashboard">
@@ -37,7 +47,7 @@ export const Sidebar = () => {
         </NavLink>
       </MenuItem>
 
-      <MenuItem>
+      <MenuItem onClick={() => getLocation()}>
         <NavLink to="/weather">
           <IconWrapper $collapsed={collapsed}>
             <FaCloud />

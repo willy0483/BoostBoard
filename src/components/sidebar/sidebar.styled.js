@@ -9,6 +9,9 @@ export const SidebarStyled = styled.div`
   flex-direction: column;
   padding: 20px 10px;
   transition: width 0.3s ease;
+  border-bottom-right-radius: 16px;
+  border-top-right-radius: 16px;
+  margin-right: 1rem;
 `;
 
 export const Logo = styled.div` 

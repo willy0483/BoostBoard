@@ -4,7 +4,7 @@ import { LocationContext } from "./provider/locationProvider";
 
 import { Main } from "./components/main/main";
 import { Footer } from "./components/footer/footer";
-import { Sidebar } from "./components/sidebar";
+import { Sidebar } from "./components/sidebar/sidebar";
 import { MainContainer } from "./components/mainContainer/mainContainer";
 
 // all my routes
@@ -27,14 +27,10 @@ function App() {
     }
   };
 
-  useEffect(() => {
-    getLocation();
-  }, []);
-
   return (
     <LocationContext.Provider value={location}>
       <MainContainer>
-        <Sidebar />
+        <Sidebar getLocation={getLocation} />
         <Main>
           <AppRoutes />
         </Main>
