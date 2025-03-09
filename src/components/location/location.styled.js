@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const LocationStyled = styled.section`
-  width: 220px;
+  width: 240px;
   height: 300px;
   position: relative;
   text-align: center;

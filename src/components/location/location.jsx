@@ -16,7 +16,7 @@ export const Location = ({ country, name }) => {
     <LocationStyled>
       <canvas
         id="dotlottie-canvas"
-        style={{ width: "170px", height: "145.7px" }}
+        style={{ width: "190px", height: "162px" }}
       ></canvas>
       <div>
         <Country>

@@ -117,17 +117,8 @@ export const WeatherPage = () => {
         />
         <WindSpeed SpeedMs={weather?.wind.speed} icon={wind} />
         <Location country={weather?.sys.country} name={weather?.name} />
-        <Visibility />
+        <Visibility number={weather?.visibility} icon={fog} />
       </WeatherGrid>
-
-      <h1>weatherPage</h1>
-      {location && location.latitude && location.longitude ? (
-        <p>
-          Latitude: {latitude}, Longitude: {longitude}
-        </p>
-      ) : (
-        <p>Location not available</p>
-      )}
     </Container>
   );
 };

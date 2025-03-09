@@ -21,10 +21,10 @@ export const WindSpeed = ({ SpeedMs, icon }) => {
       </WindSpeedImageContainer>
       <div>
         <Speed>
-          <p>{SpeedMs}</p>
+          <p>{SpeedMs}Ms</p>
         </Speed>
         <Ms>
-          <p>Ms</p>
+          <p>Wind</p>
         </Ms>
       </div>
     </WindSpeedStyled>
