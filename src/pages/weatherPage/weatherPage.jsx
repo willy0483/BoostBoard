@@ -1,6 +1,8 @@
 import { useContext, useEffect, useState } from "react";
 import axios from "axios";
 
+import { WeatherPageStyled } from "./weatherPage.styled";
+
 import { LocationContext } from "../../provider/locationProvider";
 import { Container } from "../../components/container/container";
 import { WeatherGrid } from "../../components/grid/weatherGrid.styled";
@@ -8,6 +10,8 @@ import { Forecast } from "../../components/forecast/forecast";
 import { WindSpeed } from "../../components/windSpeed/windSpeed";
 import { Location } from "../../components/location/location";
 import { Visibility } from "../../components/visibility/visibility";
+
+import { Map } from "../../components/map/map";
 
 // weatherCondition images
 import clear from "../../assets/svg/weather/clear-day.svg";
@@ -29,9 +33,14 @@ export const WeatherPage = () => {
   const [weatherIcon, setWeatherIcon] = useState(null);
   const [weatherCondition, setWeatherCondition] = useState(null);
 
-  const latitude = location.latitude;
-  const longitude = location.longitude;
+  let latitude = location?.latitude;
+  let longitude = location?.longitude;
   const apiKey = import.meta.env.VITE_WEATHER_API_KEY;
+
+  if (location === null || latitude === null) {
+    latitude = 57.087482;
+    longitude = 8.994132;
+  }
 
   const url = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${apiKey}`;
 
@@ -109,16 +118,15 @@ export const WeatherPage = () => {
 
   return (
     <Container>
-      <WeatherGrid>
-        <Forecast
-          condition={weatherCondition}
-          kelvin={weather?.main?.temp}
-          icon={weatherIcon}
-        />
-        <WindSpeed SpeedMs={weather?.wind.speed} icon={wind} />
-        <Location country={weather?.sys.country} name={weather?.name} />
-        <Visibility number={weather?.visibility} icon={fog} />
-      </WeatherGrid>
+      <WeatherPageStyled>
+        <WeatherGrid>
+          <Forecast condition={weatherCondition} kelvin={weather?.main?.temp} icon={weatherIcon} />
+          <WindSpeed SpeedMs={weather?.wind.speed} icon={wind} />
+          <Location country={weather?.sys.country} name={weather?.name} />
+          <Visibility number={weather?.visibility} icon={fog} />
+        </WeatherGrid>
+        <Map lan={latitude} lon={longitude} />
+      </WeatherPageStyled>
     </Container>
   );
 };

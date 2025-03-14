@@ -14,7 +14,7 @@ export const SidebarStyled = styled.div`
   margin-right: 1rem;
 `;
 
-export const Logo = styled.div` 
+export const Logo = styled.div`
   font-size: 24px;
   font-weight: bold;
   margin-bottom: 40px;
@@ -25,26 +25,29 @@ export const Logo = styled.div`
 export const MenuItem = styled.div`
   cursor: pointer;
   transition: all 0.2s;
-  a{
+  a {
     display: flex;
     align-items: center;
     padding: 12px;
-  margin-bottom: 10px;
-  border-radius: 10px;
-  text-decoration: none;
-  background-color: transparent;
-  color: ${(props) => props.theme.color.white};
-  
-  &:hover {
-    background-color: ${(props) => props.theme.color.secondary};
-  }
-  &.active{
-    background-color: ${(props) => props.theme.color.secondary};
-    color: ${(props) => props.theme.color.accent};
-  }
+    margin-bottom: 10px;
+    border-radius: 10px;
+    text-decoration: none;
+    background-color: transparent;
+    color: ${(props) => props.theme.color.white};
+
+    &:hover {
+      background-color: ${(props) => props.theme.color.secondary};
+    }
+    &.active {
+      background-color: ${(props) => props.theme.color.secondary};
+      color: ${(props) => props.theme.color.accent};
+    }
   }
 
-
+  div {
+    width: 18px;
+    height: 18px;
+  }
 `;
 
 export const IconWrapper = styled.div`

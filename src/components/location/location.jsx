@@ -14,10 +14,7 @@ export const Location = ({ country, name }) => {
 
   return (
     <LocationStyled>
-      <canvas
-        id="dotlottie-canvas"
-        style={{ width: "190px", height: "162px" }}
-      ></canvas>
+      <canvas id="dotlottie-canvas" style={{ width: "190px", height: "162px" }}></canvas>
       <div>
         <Country>
           <p>{country}</p>
